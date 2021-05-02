@@ -4,7 +4,10 @@ module.exports = {
   mode: "jit",
   purge: ["./src/**/*.{ts,tsx}"],
   theme: {
-    extend: {},
+    fontFamily: {
+      sans: ["Archivo"],
+      serif: ["Merriweather"],
+    },
   },
   variants: {
     extend: {},
