@@ -4,7 +4,9 @@ import React, { useState } from "react";
 const HeaderBrand: React.FC = () => {
   return (
     <div className="flex items-end">
-      <h1 className="text-4xl text-primary mr-3">UGO II</h1>
+      <Link to="/">
+        <h1 className="text-4xl text-primary mr-3">UGO II</h1>
+      </Link>
       <p className="text-2xl mr-3">our product is...</p>
       <p className="text-primary text-2xl hidden sm:inline">memorial toilets</p>
     </div>
