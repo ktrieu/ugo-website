@@ -1,13 +1,12 @@
 import * as React from "react";
-import Navbar from "../components/Navbar";
+import Layout from "../components/Layout";
 
 const IndexPage = () => {
   return (
-    <>
-      <Navbar />
+    <Layout>
       <h1>UNDER CONSTRUCTION</h1>
       <p>Estimated Completion: UGO Day 2021</p>
-    </>
+    </Layout>
   );
 };
 
