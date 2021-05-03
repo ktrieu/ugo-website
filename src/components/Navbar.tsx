@@ -20,13 +20,18 @@ interface MobileNavbarButtonProps {
 const MobileNavbarButton: React.FC<MobileNavbarButtonProps> = (props) => {
   return (
     <button
-      className="bg-primary rounded p-3 sm:hidden"
+      className="border-2 border-primary rounded p-3 sm:hidden"
       onClick={props.onClick}
     >
-      <svg viewBox="0 0 100 80" width="20" height="20">
-        <rect width="100" height="20"></rect>
-        <rect y="30" width="100" height="20"></rect>
-        <rect y="60" width="100" height="20"></rect>
+      <svg
+        className="fill-current text-primary"
+        viewBox="0 0 100 80"
+        width="20"
+        height="20"
+      >
+        <rect width="100" height="15"></rect>
+        <rect y="32" width="100" height="15"></rect>
+        <rect y="55" width="100" height="15"></rect>
       </svg>
     </button>
   );
@@ -103,7 +108,7 @@ const Navbar: React.FC = () => {
   );
 
   return (
-    <div className="border-b-2 border-primary p-3">
+    <div className="border-b-2 border-primary p-3 shadow-md">
       <div className="mx-auto max-w-screen-lg flex justify-between">
         <HeaderBrand />
         <MobileNavbarButton
