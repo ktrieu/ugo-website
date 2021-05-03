@@ -1,9 +1,11 @@
 import * as React from "react";
+import Navbar from "../components/Navbar";
 
 const IndexPage = () => {
   return (
     <>
-      <h1 className="text-red-900">UNDER CONSTRUCTION</h1>
+      <Navbar />
+      <h1>UNDER CONSTRUCTION</h1>
       <p>Estimated Completion: UGO Day 2021</p>
     </>
   );

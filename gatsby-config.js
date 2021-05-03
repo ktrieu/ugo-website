@@ -1,6 +1,16 @@
 module.exports = {
   siteMetadata: {
     title: "ugo-website",
+    navLinks: [
+      {
+        name: "Home",
+        link: "/",
+      },
+      {
+        name: "Products",
+        link: "/products",
+      },
+    ],
   },
   plugins: [
     "gatsby-plugin-postcss",
