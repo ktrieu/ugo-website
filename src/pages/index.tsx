@@ -15,7 +15,7 @@ const HeroButton: React.FC<HeroButtonProps> = (props) => {
   const ButtonIcon = props.icon;
   return (
     <Link
-      className="border-2 border-primary text-primary p-6 flex flex-col items-center"
+      className="border-2 border-primary text-primary hover:bg-primary hover:text-white p-6 flex flex-col items-center"
       to={props.to}
     >
       <ButtonIcon size="50" className="fill-current" />

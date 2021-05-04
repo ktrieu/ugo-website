@@ -52,7 +52,7 @@ const MobileNavbar: React.FC<NavbarProps> = (props) => {
       {props.links.map((link) => (
         <li className="mt-3">
           <Link
-            className="block w-full text-primary text-center text-2xl"
+            className="block w-full text-primary text-center text-2xl hover:underline"
             to={link.link}
           >
             {link.name}
@@ -70,7 +70,7 @@ const DesktopNavbar: React.FC<NavbarProps> = (props) => {
         {props.links.map((link) => (
           <li>
             <Link
-              className="text-primary text-center text-2xl mr-12"
+              className="text-primary text-center text-2xl mr-12 hover:underline"
               to={link.link}
             >
               {link.name}
