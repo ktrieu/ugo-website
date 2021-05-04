@@ -7,6 +7,14 @@ module.exports = {
         link: "/",
       },
       {
+        name: "About",
+        link: "/about",
+      },
+      {
+        name: "History",
+        link: "/products",
+      },
+      {
         name: "Products",
         link: "/products",
       },
