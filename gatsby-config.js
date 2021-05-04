@@ -14,11 +14,6 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-postcss",
-    "gatsby-plugin-image",
-    "gatsby-plugin-react-helmet",
-    "gatsby-transformer-remark",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -30,10 +25,15 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        name: "content",
+        path: "./src/content/",
       },
-      __key: "pages",
+      __key: "content",
     },
+    "gatsby-plugin-image",
+    "gatsby-plugin-react-helmet",
+    "gatsby-transformer-remark",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
   ],
 };
