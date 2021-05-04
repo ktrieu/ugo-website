@@ -29,9 +29,9 @@ const MobileNavbarButton: React.FC<MobileNavbarButtonProps> = (props) => {
         width="20"
         height="20"
       >
-        <rect width="100" height="15"></rect>
-        <rect y="32" width="100" height="15"></rect>
-        <rect y="55" width="100" height="15"></rect>
+        <rect width="100" height="20" rx="8"></rect>
+        <rect y="30" width="100" height="20" rx="8"></rect>
+        <rect y="60" width="100" height="20" rx="8"></rect>
       </svg>
     </button>
   );
