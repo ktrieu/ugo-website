@@ -50,7 +50,7 @@ const MobileNavbar: React.FC<NavbarProps> = (props) => {
   return (
     <ul className="sm:hidden w-full">
       {props.links.map((link) => (
-        <li className="mt-3">
+        <li className="mt-3" key={link.name}>
           <Link
             className="block w-full text-primary text-center text-2xl hover:underline"
             to={link.link}
@@ -68,7 +68,7 @@ const DesktopNavbar: React.FC<NavbarProps> = (props) => {
     <div className="hidden sm:block">
       <ul className="flex justify-start">
         {props.links.map((link) => (
-          <li>
+          <li key={link.name}>
             <Link
               className="text-primary text-center text-2xl mr-12 hover:underline"
               to={link.link}
