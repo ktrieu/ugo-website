@@ -8,8 +8,10 @@ module.exports = {
       sans: ["Archivo"],
       serif: ["Merriweather"],
     },
-    colors: {
-      primary: "#027a0e",
+    extend: {
+      colors: {
+        primary: "#027a0e",
+      },
     },
   },
   variants: {
