@@ -17,6 +17,7 @@
   "dependencies": {
     "@fontsource/archivo": "^4.2.3",
     "@fontsource/merriweather": "^4.2.2",
+    "@tailwindcss/typography": "^0.4.0",
     "gatsby": "^3.4.0",
     "gatsby-plugin-image": "^1.4.0",
     "gatsby-plugin-postcss": "^4.4.0",
