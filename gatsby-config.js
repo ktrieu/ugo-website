@@ -1,6 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: "ugo-website",
+    title: "UGO II",
+    titleTemplate: "%s | UGO II",
+    description: "UGO II. Our product is.",
+    url: "https://ugo-ii.com",
     navLinks: [
       {
         name: "Home",

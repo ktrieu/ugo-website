@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 
 const Page404: React.FC = () => {
   return (
-    <Layout>
+    <Layout title="404" path="">
       <h1 className="text-primary text-9xl">404</h1>
       <h3 className="text-3xl">PAGE NOT FOUND</h3>
       <div className="mt-3 text-lg">

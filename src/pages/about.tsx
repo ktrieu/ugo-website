@@ -80,7 +80,7 @@ const AboutPage: React.FC = () => {
   const query = useStaticQuery<AboutPageQuery>(ABOUT_PAGE_QUERY);
 
   return (
-    <Layout>
+    <Layout title="About" path="/about">
       <h1 className="text-primary text-6xl">About Us</h1>
       <div
         className="prose max-w-none mt-3"

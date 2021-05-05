@@ -26,7 +26,7 @@ const HeroButton: React.FC<HeroButtonProps> = (props) => {
 
 const IndexPage = () => {
   return (
-    <Layout>
+    <Layout title="Home" path="">
       <div className="relative">
         <StaticImage
           imgClassName="w-full"
