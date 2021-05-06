@@ -7,6 +7,34 @@ import Card from "../components/Card";
 
 import Layout from "../components/Layout";
 
+interface HQCardProps {
+  name: string;
+  location: string;
+  photo: GraphQLImage;
+  html: string;
+}
+
+const HQCard: React.FC<HQCardProps> = (props) => {
+  return (
+    <Card>
+      <h1 className="text-primary text-6xl">{props.name}</h1>
+      <h6 className="text-2xl bold">{props.location}</h6>
+      <div className="mt-3">
+        <GatsbyImage
+          className="w-100 h-auto"
+          image={props.photo.childImageSharp.gatsbyImageData}
+          alt={props.name}
+          objectFit="scale-down"
+        />
+        <div
+          className="mt-3"
+          dangerouslySetInnerHTML={{ __html: props.html }}
+        />
+      </div>
+    </Card>
+  );
+};
+
 interface HQMarkdownFrontmatter {
   name: string;
   location: string;
@@ -85,22 +113,7 @@ const AboutPage: React.FC = () => {
           } = hq.node.childMarkdownRemark.frontmatter;
           const html = hq.node.childMarkdownRemark.html;
           return (
-            <Card>
-              <h1 className="text-primary text-6xl">{name}</h1>
-              <h6 className="text-2xl bold">{location}</h6>
-              <div className="mt-3">
-                <GatsbyImage
-                  className="w-100 h-auto"
-                  image={photo.childImageSharp.gatsbyImageData}
-                  alt={name}
-                  objectFit="scale-down"
-                />
-                <div
-                  className="mt-3"
-                  dangerouslySetInnerHTML={{ __html: html }}
-                />
-              </div>
-            </Card>
+            <HQCard name={name} location={location} photo={photo} html={html} />
           );
         })}
       </div>
