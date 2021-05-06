@@ -1,16 +1,11 @@
 import React from "react";
 
 import { graphql, useStaticQuery } from "gatsby";
-import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
+import { MarkdownFile, GraphQLImage } from "../types";
 import Card from "../components/Card";
 
 import Layout from "../components/Layout";
-
-interface MarkdownFile {
-  childMarkdownRemark: {
-    html: string;
-  };
-}
 
 interface HQMarkdown {
   node: {
@@ -19,11 +14,7 @@ interface HQMarkdown {
       frontmatter: {
         name: string;
         location: string;
-        photo: {
-          childImageSharp: {
-            gatsbyImageData: IGatsbyImageData;
-          };
-        };
+        photo: GraphQLImage;
       };
     };
   };
