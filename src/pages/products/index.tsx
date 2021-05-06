@@ -17,14 +17,16 @@ const ProductCategoryCard: React.FC<ProductCategoryCardProps> = (props) => {
   return (
     <Link className="group" to={props.to}>
       <Card>
-        <h1 className="text-primary text-3xl group-hover:underline">
-          {props.title}
-        </h1>
-        <div className="mt-3">{props.photo}</div>
-        <div
-          className="mt-3 prose max-w-none"
-          dangerouslySetInnerHTML={{ __html: props.html }}
-        />
+        <div className="h-full flex flex-col justify-around">
+          <h1 className="text-primary text-3xl group-hover:underline">
+            {props.title}
+          </h1>
+          <div className="mt-3">{props.photo}</div>
+          <div
+            className="mt-3 prose max-w-none"
+            dangerouslySetInnerHTML={{ __html: props.html }}
+          />
+        </div>
       </Card>
     </Link>
   );
