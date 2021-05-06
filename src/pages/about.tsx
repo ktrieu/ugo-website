@@ -7,24 +7,19 @@ import Card from "../components/Card";
 
 import Layout from "../components/Layout";
 
-interface HQMarkdown {
-  node: {
-    childMarkdownRemark: {
-      html: string;
-      frontmatter: {
-        name: string;
-        location: string;
-        photo: GraphQLImage;
-      };
-    };
-  };
+interface HQMarkdownFrontmatter {
+  name: string;
+  location: string;
+  photo: GraphQLImage;
 }
 
 interface AboutPageQuery {
   introHtml: MarkdownFile;
   valuesHtml: MarkdownFile;
   hqs: {
-    edges: HQMarkdown[];
+    edges: Array<{
+      node: MarkdownFile<HQMarkdownFrontmatter>;
+    }>;
   };
 }
 
