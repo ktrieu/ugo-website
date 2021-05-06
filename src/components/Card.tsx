@@ -1,0 +1,19 @@
+import { IGatsbyImageData, GatsbyImage } from "gatsby-plugin-image";
+import React from "react";
+
+interface HQCardProps {
+  name: string;
+  location: string;
+  html: string;
+  photo: IGatsbyImageData;
+}
+
+const HQCard: React.FC<HQCardProps> = (props) => {
+  return (
+    <div className="rounded p-3 border border-primary mt-3">
+      {props.children}
+    </div>
+  );
+};
+
+export default HQCard;

@@ -1,14 +1,8 @@
-import { graphql, useStaticQuery } from "gatsby";
-import { IGatsbyImageData } from "gatsby-plugin-image";
-import {
-  ButtonBack,
-  ButtonNext,
-  CarouselProvider,
-  Slide,
-  Slider,
-} from "pure-react-carousel";
 import React from "react";
-import HQCard from "../components/HQCard";
+
+import { graphql, useStaticQuery } from "gatsby";
+import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
+import Card from "../components/Card";
 
 import Layout from "../components/Layout";
 
@@ -97,18 +91,32 @@ const AboutPage: React.FC = () => {
       />
       <h1 className="text-primary text-6xl mt-6">Our Headquarters</h1>
       <div className="mt-6">
-        {query.hqs.edges.map((hq) => (
-          <HQCard
-            name={hq.node.childMarkdownRemark.frontmatter.name}
-            key={hq.node.childMarkdownRemark.frontmatter.name}
-            location={hq.node.childMarkdownRemark.frontmatter.location}
-            photo={
-              hq.node.childMarkdownRemark.frontmatter.photo.childImageSharp
-                .gatsbyImageData
-            }
-            html={hq.node.childMarkdownRemark.html}
-          />
-        ))}
+        {query.hqs.edges.map((hq) => {
+          const {
+            name,
+            location,
+            photo,
+          } = hq.node.childMarkdownRemark.frontmatter;
+          const html = hq.node.childMarkdownRemark.html;
+          return (
+            <Card>
+              <h1 className="text-primary text-6xl">{name}</h1>
+              <h6 className="text-2xl bold">{location}</h6>
+              <div className="mt-3">
+                <GatsbyImage
+                  className="w-100 h-auto"
+                  image={photo.childImageSharp.gatsbyImageData}
+                  alt={name}
+                  objectFit="scale-down"
+                />
+                <div
+                  className="mt-3"
+                  dangerouslySetInnerHTML={{ __html: html }}
+                />
+              </div>
+            </Card>
+          );
+        })}
       </div>
     </Layout>
   );
