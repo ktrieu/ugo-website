@@ -10,7 +10,7 @@ interface HQCardProps {
 
 const HQCard: React.FC<HQCardProps> = (props) => {
   return (
-    <div className="rounded p-3 border border-primary mt-3">
+    <div className="rounded p-3 border-2 border-primary mt-3 shadow-lg">
       {props.children}
     </div>
   );
