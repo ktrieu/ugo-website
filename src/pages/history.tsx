@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 
 import Layout from "../components/Layout";
 import Card from "../components/Card";
@@ -19,6 +19,18 @@ interface TimelineProps {
 }
 
 const Timeline: React.FC<TimelineProps> = (props) => {
+  const { files } = props;
+
+  const sortedFiles = useMemo(
+    () =>
+      props.files.sort((a, b) => {
+        const aYear = Number(a.childMarkdownRemark.frontmatter.year);
+        const bYear = Number(b.childMarkdownRemark.frontmatter.year);
+        return aYear - bYear;
+      }),
+    [files]
+  );
+
   const [idx, setIdx] = useState<number>(0);
 
   const canNavigateLeft = idx > 0;
@@ -32,7 +44,7 @@ const Timeline: React.FC<TimelineProps> = (props) => {
     setIdx((idx) => idx + 1);
   };
 
-  const file = props.files[idx];
+  const file = sortedFiles[idx];
 
   return (
     <div className="flex-grow flex flex-col">
