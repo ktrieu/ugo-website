@@ -1,7 +1,8 @@
 ---
 year: 1964
-photo: ./1964_dropped.png
-photo_credit: https://commons.wikimedia.org/wiki/File:U.S._Department_of_Justice_flag.png
+photo: ./1964_dropped.jpg
+photo_credit: https://commons.wikimedia.org/wiki/File:FBI_Headquarters.jpg
+alt: FBI Headquarters
 ---
 
-The Department of Justice drops all investigations into UGO II.
+The Federal Bureau Of Investigation drops all charges against UGO II.

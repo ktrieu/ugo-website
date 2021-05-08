@@ -12,6 +12,7 @@ interface HistoryFrontmatter {
   photo: GraphQLImage;
   year: string;
   photo_credit: string;
+  alt: string;
 }
 
 interface TimelineProps {
@@ -57,7 +58,7 @@ const Timeline: React.FC<TimelineProps> = (props) => {
                 file.childMarkdownRemark.frontmatter.photo.childImageSharp
                   .gatsbyImageData
               }
-              alt={""}
+              alt={file.childMarkdownRemark.frontmatter.alt}
             />
             <a
               className="block w-full text-right text-xs mt-1"
@@ -120,6 +121,7 @@ const HISTORY_PAGE_QUERY = graphql`
               }
             }
             photo_credit
+            alt
           }
           html
         }
