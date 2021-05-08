@@ -42,7 +42,7 @@ interface ProductCategoryFrontmatter {
 }
 
 interface ProductsPageQuery {
-  constructionDesc: MarkdownFile<ProductCategoryFrontmatter>;
+  contentDesc: MarkdownFile<ProductCategoryFrontmatter>;
   financeDesc: MarkdownFile<ProductCategoryFrontmatter>;
   techDesc: MarkdownFile<ProductCategoryFrontmatter>;
   consumerDesc: MarkdownFile<ProductCategoryFrontmatter>;
@@ -50,9 +50,7 @@ interface ProductsPageQuery {
 
 const PRODUCTS_PAGE_QUERY = graphql`
   query ProductPageQuery {
-    constructionDesc: file(
-      relativePath: { eq: "products/construction_desc.md" }
-    ) {
+    contentDesc: file(relativePath: { eq: "products/content_desc.md" }) {
       childMarkdownRemark {
         frontmatter {
           photo {
@@ -132,11 +130,11 @@ const ProductsPage: React.FC = () => {
           html={query.consumerDesc.childMarkdownRemark.html}
         />
         <ProductCategoryCard
-          title="Construction"
-          photo={query.constructionDesc.childMarkdownRemark.frontmatter.photo}
-          alt="Office buildings under construction."
-          to="/products/construction"
-          html={query.constructionDesc.childMarkdownRemark.html}
+          title="Content"
+          photo={query.contentDesc.childMarkdownRemark.frontmatter.photo}
+          alt="Video editing software on a monitor."
+          to="/products/content"
+          html={query.contentDesc.childMarkdownRemark.html}
         />
       </div>
     </Layout>
