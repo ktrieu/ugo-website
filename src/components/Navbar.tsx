@@ -1,14 +1,31 @@
 import { graphql, Link, useStaticQuery } from "gatsby";
 import React, { useState } from "react";
 
-const HeaderBrand: React.FC = () => {
+interface HeaderBrandProps {
+  products: Array<{
+    childMarkdownRemark: {
+      frontmatter: {
+        name: string;
+      };
+    };
+  }>;
+}
+
+const HeaderBrand: React.FC<HeaderBrandProps> = (props) => {
+  const productTitles = props.products.map(
+    (product) => product.childMarkdownRemark.frontmatter.name
+  );
+
+  const selectedTitle =
+    productTitles[Math.floor(Math.random() * productTitles.length)];
+
   return (
     <div className="flex items-end">
       <Link to="/">
         <h1 className="text-4xl text-primary mr-3">UGO II</h1>
       </Link>
       <p className="text-2xl mr-3">our product is...</p>
-      <p className="text-primary text-2xl hidden sm:inline">memorial toilets</p>
+      <p className="text-primary text-2xl hidden sm:inline">{selectedTitle}</p>
     </div>
   );
 };
@@ -88,6 +105,15 @@ interface NavbarQuery {
       navLinks: NavbarLink[];
     };
   };
+  products: {
+    nodes: Array<{
+      childMarkdownRemark: {
+        frontmatter: {
+          name: string;
+        };
+      };
+    }>;
+  };
 }
 
 const Navbar: React.FC = () => {
@@ -103,6 +129,17 @@ const Navbar: React.FC = () => {
             }
           }
         }
+        products: allFile(
+          filter: { relativePath: { glob: "products/*/*.md" } }
+        ) {
+          nodes {
+            childMarkdownRemark {
+              frontmatter {
+                name
+              }
+            }
+          }
+        }
       }
     `
   );
@@ -110,7 +147,7 @@ const Navbar: React.FC = () => {
   return (
     <div className="border-b-2 border-primary p-3 shadow-md">
       <div className="mx-auto max-w-screen-lg flex justify-between">
-        <HeaderBrand />
+        <HeaderBrand products={navbarQuery.products.nodes} />
         <MobileNavbarButton
           onClick={() => {
             setShowMobileNavbar((val) => !val);
