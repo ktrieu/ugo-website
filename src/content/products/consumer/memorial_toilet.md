@@ -1,5 +1,5 @@
 ---
-name: Memorial Toilet
+name: Memorial Toilets
 tagline: Honor their life with the thing they loved most.
 ---
 
