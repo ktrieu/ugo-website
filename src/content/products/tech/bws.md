@@ -1,5 +1,5 @@
 ---
-title: Bobby Web Services
+name: Bobby Web Services
 tagline: Works when it feels like it.
 ---
 

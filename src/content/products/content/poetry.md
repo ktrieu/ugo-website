@@ -1,5 +1,5 @@
 ---
-title: Contemporary Poetry
+name: Contemporary Poetry
 tagline: From the visionary minds that brought you 7 different raps about geese.
 ---
 

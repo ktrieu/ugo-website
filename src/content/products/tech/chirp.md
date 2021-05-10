@@ -1,5 +1,5 @@
 ---
-title: Chirp™ Death Ray
+name: Chirp™ Death Ray
 tagline: Blow your enemies' heads off with a 20% off your Indigo purchase coupon.
 ---
 

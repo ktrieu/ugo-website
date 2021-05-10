@@ -1,5 +1,5 @@
 ---
-title: Top 10 Lists
+name: Top 10 Lists
 tagline: Giving you the latest scoop on Uganda's top cement mixers.
 ---
 

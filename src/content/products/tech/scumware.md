@@ -1,5 +1,5 @@
 ---
-title: Scumware
+name: Scumware
 tagline: The power of scum in your hands.
 ---
 

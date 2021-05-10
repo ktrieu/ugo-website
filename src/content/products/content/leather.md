@@ -1,5 +1,5 @@
 ---
-title: Bobby Leather Services
+name: Bobby Leather Services
 tagline: Made only from the most endangered animals available on the market.
 ---
 

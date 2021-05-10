@@ -1,5 +1,5 @@
 ---
-title: UGO Coin
+name: UGO Coin
 tagline: The only cryptocurrency not yet discovered by Elon Musk.
 ---
 
