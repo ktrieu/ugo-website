@@ -1,8 +1,8 @@
 import { Link } from "gatsby";
 import React from "react";
-import Card from "../../components/Card";
-import { MarkdownFile } from "../../types";
-import { ProductFrontMatter } from "./types";
+import Card from "./Card";
+import { MarkdownFile } from "../types";
+import { ProductFrontMatter } from "../types";
 
 interface ProductCardProps {
   name: string;

@@ -1,11 +1,10 @@
 import React from "react";
 
 import Layout from "../../components/Layout";
-import Card from "../../components/Card";
 
-import { ProductQuery } from "./types";
+import { ProductQuery } from "../../types";
 import { graphql, useStaticQuery } from "gatsby";
-import { ProductPageLayout } from "./components";
+import { ProductPageLayout } from "../../components/products";
 
 const CONSUMER_QUERY = graphql`
   query ConsumerQuery {
