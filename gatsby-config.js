@@ -46,5 +46,17 @@ module.exports = {
     "gatsby-transformer-remark",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: `UGO II`,
+        short_name: `UGO II`,
+        start_url: `/`,
+        background_color: `#000000`,
+        theme_color: `#027a0e`,
+        display: `standalone`,
+        icon: "./src/images/icon.svg",
+      },
+    },
   ],
 };
