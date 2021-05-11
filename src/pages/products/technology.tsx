@@ -9,7 +9,7 @@ import { ProductPageLayout } from "../../components/products";
 const TECH_QUERY = graphql`
   query TechQuery {
     products: allFile(
-      filter: { relativePath: { glob: "products/consumer/*.md" } }
+      filter: { relativePath: { glob: "products/tech/*.md" } }
     ) {
       nodes {
         childMarkdownRemark {
