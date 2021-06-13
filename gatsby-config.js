@@ -58,5 +58,11 @@ module.exports = {
         icon: "./src/images/icon.svg",
       },
     },
+    {
+      resolve: "gatsby-plugin-google-gtag",
+      options: {
+        trackingIds: ["G-S4MKTL5V9Z"],
+      },
+    },
   ],
 };
