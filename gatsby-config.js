@@ -21,6 +21,10 @@ module.exports = {
         name: "Products",
         link: "/products",
       },
+      {
+        name: "Careers",
+        link: "/careers",
+      },
     ],
   },
   plugins: [
