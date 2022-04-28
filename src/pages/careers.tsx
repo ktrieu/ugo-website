@@ -42,6 +42,10 @@ const CAREERS_PAGE_QUERY = graphql`
   }
 `;
 
+const getMailtoLink = (title: string) => {
+  return `mailto:contact@ugo-ii.com?subject=Job Application: ${title}`;
+};
+
 const CareersPage: React.FC = (props) => {
   const query = useStaticQuery<CareersPageQuery>(CAREERS_PAGE_QUERY);
 
@@ -55,18 +59,25 @@ const CareersPage: React.FC = (props) => {
         }}
       />
       <div className="mt-6">
-        {query.positions.edges.map((position) => (
-          <CollapseCard
-            title={position.node.childMarkdownRemark.frontmatter.title}
-          >
-            <div
-              className="prose max-w-none mt-3"
-              dangerouslySetInnerHTML={{
-                __html: position.node.childMarkdownRemark.html,
-              }}
-            />
-          </CollapseCard>
-        ))}
+        {query.positions.edges.map((position) => {
+          const title = position.node.childMarkdownRemark.frontmatter.title;
+          return (
+            <CollapseCard title={title}>
+              <div
+                className="prose max-w-none mt-3"
+                dangerouslySetInnerHTML={{
+                  __html: position.node.childMarkdownRemark.html,
+                }}
+              />
+              <a
+                className="text-white text-2xl bg-primary rounded-lg mt-6 block w-min p-3"
+                href={getMailtoLink(title)}
+              >
+                Apply
+              </a>
+            </CollapseCard>
+          );
+        })}
       </div>
     </Layout>
   );
