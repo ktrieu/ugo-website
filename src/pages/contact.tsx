@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 
 const ContactPage: React.FC = () => {
   return (
-    <Layout title="About" path="/about">
+    <Layout title="Contact Us" path="/contact">
       <h1 className="text-primary text-6xl">Contact Us</h1>
       <div className="grid grid-cols-2 gap-4 divide-x-2">
         <div className="prose max-w-none mt-3">
